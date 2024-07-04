@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="contained px-5 py-5"> 
+    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" action=".">
+        {%csrf_token%}
+        <!-- Pills navs -->
+        <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="tab-register" data-mdb-pill-init href="#pills-register" role="tab"
+                aria-controls="pills-register" aria-selected="true">Register</a>
+            </li>
+        </ul>
+      
+                <!-- Username input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{user_form.username}}
+                <!--input type="text" id="Username" class="form-control"  placeholder="Username"/-->
+                <label class="form-label" for="{{user_forms.username.id_for_label}}"></label>
+                </div>
+
+                <!--First Name input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{user_form.first_name}}
+                <!--input type="text" id="FirstName" class="form-control"  placeholder="First Name"/-->
+                <label class="form-label" for="{{user_forms.first_name.id_for_label}}"></label>
+                </div>
+
+                <!--Last Name input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{user_form.last_name}}
+                <!--input type="text" id="Name" class="form-control"  placeholder="Last Name"/-->
+                <label class="form-label" for="{{user_forms.last_name.id_for_label}}"></label>
+                </div>
+    
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{user_form.email}}
+                <!--input type="email" id="emailAddress" class="form-control"  placeholder="Email"/-->
+                <label class="form-label" for="{{user_forms.email.id_for_label}}"></label>
+                </div>
+        
+                <!-- Password input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{user_form.password}}
+                <!--input type="password" id="Password" class="form-control"  placeholder="Password"/-->
+                <label class="form-label" for="{{user_forms.password.id_for_label}}"></label>
+                </div>
+        
+                <!-- Repeat Password input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    {{user_form.repeatpassword}}
+                <!--input type="password" id="RepeatPassword" class="form-control"  placeholder="Repeat password"/-->
+                <label class="form-label" for="{{user_forms.repeatpassword.id_for_label}}"></label>
+                </div>
+        
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+                    aria-describedby="registerCheckHelpText" />
+                <label class="form-check-label" for="registerCheck">
+                    I have read and agree to the terms
+                </label>
+                </div>
+        
+                <!-- Submit button -->
+                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-3">Sign up</button>
+            
+        </div>
+        <!-- Pills content -->
+    </form>        
+</div>
+{% endblock %}

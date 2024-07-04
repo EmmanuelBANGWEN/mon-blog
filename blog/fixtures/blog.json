@@ -1,0 +1,170 @@
+[
+{
+  "model": "blog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Python",
+    "slug": "python"
+  }
+},
+{
+  "model": "blog.category",
+  "pk": 2,
+  "fields": {
+    "name": "PHP",
+    "slug": "php"
+  }
+},
+{
+  "model": "blog.category",
+  "pk": 3,
+  "fields": {
+    "name": "JavaScripts",
+    "slug": "javasripts"
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 1,
+  "fields": {
+    "category": 3,
+    "title": "E-commerce website",
+    "slug": "e-commerce-website",
+    "body": "juste une publication test et c'est tout",
+    "created": "2024-06-15T22:40:27.663Z",
+    "update": "2024-06-24T08:34:20.962Z",
+    "statut": "draft",
+    "published": "2024-06-15T22:38:05Z",
+    "author": 1
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "title": "je suis debutant en django",
+    "slug": "je-suis-debutant-en-django",
+    "body": "je suis debutant en django",
+    "created": "2024-06-16T00:14:48.662Z",
+    "update": "2024-06-16T00:14:48.662Z",
+    "statut": "published",
+    "published": "2024-06-16T00:06:06Z",
+    "author": 2
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 7,
+  "fields": {
+    "category": 1,
+    "title": "Developpeur-Full-Stack",
+    "slug": "developpeur-full-stack",
+    "body": "Developpeur-Full-Stack",
+    "created": "2024-06-22T17:26:58.212Z",
+    "update": "2024-06-22T17:26:58.212Z",
+    "statut": "published",
+    "published": "2024-06-22T17:26:06Z",
+    "author": 2
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "title": "D\u00e9veloppeur-frontend",
+    "slug": "developpeur-frontend",
+    "body": "D\u00e9veloppeur-frontend",
+    "created": "2024-06-22T17:27:50.012Z",
+    "update": "2024-06-22T17:27:50.012Z",
+    "statut": "published",
+    "published": "2024-06-22T17:27:04Z",
+    "author": 1
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 9,
+  "fields": {
+    "category": 2,
+    "title": "D\u00e9veloppeur-Backend",
+    "slug": "developpeur-backend",
+    "body": "Comment-devenir-D\u00e9veloppeur-Backend",
+    "created": "2024-06-22T17:28:35.638Z",
+    "update": "2024-06-22T17:28:35.638Z",
+    "statut": "published",
+    "published": "2024-06-22T17:28:02Z",
+    "author": 3
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 10,
+  "fields": {
+    "category": 1,
+    "title": "Language de programation Python",
+    "slug": "language-de-programation-python",
+    "body": "Le language python fait partie des languages les plus populaires",
+    "created": "2024-06-22T18:01:21.684Z",
+    "update": "2024-06-24T08:35:18.887Z",
+    "statut": "published",
+    "published": "2024-06-22T17:59:05Z",
+    "author": 2
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 11,
+  "fields": {
+    "category": 1,
+    "title": "D\u00e9veloppement Web avec Django",
+    "slug": "developpement-web-avec-django",
+    "body": "Django est un framework cr\u00e9er en language python",
+    "created": "2024-06-22T18:03:53.012Z",
+    "update": "2024-06-22T18:03:53.012Z",
+    "statut": "draft",
+    "published": "2024-06-22T18:01:36Z",
+    "author": 2
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 12,
+  "fields": {
+    "category": 1,
+    "title": "Initier vous \u00e0 la programmation en Python",
+    "slug": "initier-vous-la-programmation-en-python",
+    "body": "C'est une aventure passionnante",
+    "created": "2024-06-22T18:05:05.732Z",
+    "update": "2024-06-22T18:05:05.733Z",
+    "statut": "published",
+    "published": "2024-06-22T18:03:59Z",
+    "author": 3
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 1,
+  "fields": {
+    "post": 10,
+    "username": "Trebmal",
+    "email": "bangwenbikoy@gmail.com",
+    "body": "merci pour le partage",
+    "created": "2024-06-22T18:09:16.264Z",
+    "updated": "2024-06-22T18:09:16.264Z"
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 2,
+  "fields": {
+    "post": 12,
+    "username": "Bangwen",
+    "email": "bangwnbioy@gmail.com",
+    "body": "merci",
+    "created": "2024-06-22T18:10:16.071Z",
+    "updated": "2024-06-22T18:10:16.071Z"
+  }
+}
+]

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="contained px-5 py-5">
+    <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="POST" action=".">
+        {% csrf_token %}
+        
+        <!-- Username input -->
+        <div class="form-outline mb-4">
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" />
+            <label class="form-label" for="username"></label>
+            <div class="invalid-feedback" data-sd-feedback="emailAddress:required">Username is required.</div>
+            <div class="invalid-feedback" data-sd-feedback="emailAddress:email">Username is not valid.</div>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+            <label class="form-label" for="password"></label>
+            <div class="invalid-feedback" data-sd-feedback="message:required">Password is required.</div>
+        </div>
+        
+        <!-- Submit button -->
+        <div class="d-grid">
+            <button type="submit" id="submitButton" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

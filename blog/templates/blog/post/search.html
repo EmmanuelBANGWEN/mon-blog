@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+    
+{% block content %}
+        
+    <div class="container column">
+        {% if query %}
+            <h1>Posts containing "{{query}}" </h1>
+            <h3>
+                {% with results.count as total_results %}
+                    Found {{ total_results}} result{{ total_results|pluralize }}
+                {% endwith %}
+            </h3>
+
+        {% for post in results %} 
+                <div class="d-flex">
+                    <div class="card mb-4">
+                        <!-- <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a> -->
+                        <div class="card-body">
+                            <div class="small text-muted">{{post.published}}</div>
+                            <h2 class="card-title h4">{{post.title}}</h2>
+                            <p class="card-text">{{post.body|truncatechars:100}}</p>
+                            <a class="btn btn-primary" href="{{post.get_absolute_url}}">Read more →</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            {% empty %}
+                <p>There are no results for your query</p>
+        {% endfor %}
+        <p><a href="{% url 'post_search' %}">Search again</a></p>
+    {% else %}
+        
+    <h1>Search for posts</h1>
+    <form method="get">
+        {{ search_form.as_p }}
+        <input type="submit" value="Search">
+    </form>
+{% endif %}
+{% endblock %}    
+

@@ -1,0 +1,20 @@
+<nav aria-label="Pagination">
+    <hr class="my-0" />
+    <ul class="pagination justify-content-center my-4">
+        {% if page.has_previous %}
+
+            <li class="page-item"><a class="page-link" href="?page={{page.previous_page_number}}" tabindex="-1" aria-disabled="true">Previous</a></li>
+        {% endif %}
+
+        <li class="page-item active" aria-current="page"><a class="page-link" href="#!">{{page.number}} </a></li>
+        {% if page.paginator.num_pages != page.number %}
+            <li class="page-item"><a class="page-link" href="#!">of</a></li>
+            <li class="page-item"><a class="page-link" href="#!"> {{page.paginator.num_pages}} </a></li>
+
+        {%endif%}
+      
+        {% if page.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{page.next_page_number}}">Next</a></li>
+        {% endif %}
+    </ul>
+</nav>
