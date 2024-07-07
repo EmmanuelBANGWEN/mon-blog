@@ -6,11 +6,10 @@ from .models import Post
 from django.views import generic
 from django.core.mail import send_mail
 from .models import Comment, Category, Post
-from .forms import CommentForm, SearchPost, PostForm
+from .forms import CommentForm, SearchPost, PostForm, EmailPostForm
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank, TrigramSimilarity
 from django.http.response import HttpResponseRedirect, StreamingHttpResponse
 from django.core.serializers.json import DjangoJSONEncoder
-
 
 # Create your views here
 
@@ -145,10 +144,10 @@ def post_share(request, post_id: int):
         form = EmailPostForm(request.POST)
         if form.is_valid():
             post_url = request.bullt_absolute_uri(post.get_absolute_url())
-            cl = form.cleaned_data
+            cd = form.cleaned_data
             subject = f'{cd["name"]} vous recomande de lire {post.title}'
-            message = f'lisez {post.title} au lien {post_url} \n\n'  
-                      f'(id['name'] a laissé ce comentaire comment:(cd['comments'])'
+            message = f'lisez {post.title} au lien {post_url} \n\n' \
+                    f'{cd["name"]} a laissé ce comentaire comment:{cd["comments"]})'
             send_mail(subject, message,cd['email'], [cd['to']])
             sent = True
         else:

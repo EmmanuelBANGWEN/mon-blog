@@ -4,7 +4,8 @@ import datetime
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-from django.utils.timezone import utc
+#from django.utils.timezone import utc
+from datetime import timezone
 
 
 class Migration(migrations.Migration):
@@ -26,7 +27,7 @@ class Migration(migrations.Migration):
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('update', models.DateTimeField(auto_now=True)),
                 ('statut', models.CharField(choices=[('draft', 'Draft'), ('published', 'Published')], default='draft', max_length=10)),
-                ('published', models.DateTimeField(default=datetime.datetime(2024, 6, 15, 22, 17, 10, 60396, tzinfo=utc))),
+                ('published', models.DateTimeField(default=datetime.datetime(2024, 6, 15, 22, 17, 10, 60396, tzinfo=timezone.utc))),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posted', to=settings.AUTH_USER_MODEL)),
             ],
         ),
